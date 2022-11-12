@@ -1,0 +1,6 @@
+ECHO est� activado.
+.env
+.venv
+exel-parser
+__pycache__
+.vscode

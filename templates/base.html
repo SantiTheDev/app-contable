@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
+    <style>
+      .popup{
+        background: rgba(0,0,0,0);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>{{ title }}</h1>
+      <hr>
+      {% block content %}{% endblock %}
+      <div class="container">
+        <a href="#" class="popupbutton">Add row</a>
+        <div class="container-fluid">
+          <form action="{{ url_for('add_data') }}" method="POST">
+            <label>codco</label>
+            <input type="text" name="codco" placeholder="codco">
+            
+            <label>codlocal</label>
+            <input type="text" name = "codlocal" placeholder="cod local">
+            
+            <label>valorneto</label>
+            <input type="text" name ="valorneto" placeholder="valorneto">
+            
+            <label>iddetalle</label>
+            <input type="text" name = "iddetalle" placeholder="id detalle">
+            <br>
+            <button type="submit" class="btn btn-primary">add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("popupbutton").addEventListener("click", function(){
+        document.querySelector(".container-fluid").style.display = "none"
+      })
+    </script>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>codco</th>
+        <th>codigo</th>
+        <th>descripcion</th>
+        <th>tipo</th>
+        <th>caracteristicas</th>
+        <th>ubicacion</th>
+        <th>centor costo</th>
+        <th>cantidad</th>
+        <th>valor</th>
+        <th>iva</th>
+        <th>adci mejora</th>
+        <th>aipi</th>
+        <th>depreciacion</th>
+        <th>aipi depreciacion</th>
+        <th>total</th>
+        <th>valorizacion</th>
+        <th>f.adq</th>
+        <th>proveedor</th>
+        <th>factura</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        ajax: '/api/data',
+        serverSide: true,
+        columns: [
+          {data: 'codco'},
+          {data: 'codigo', orderable: false},
+          {data: 'descripcion', orderable: false},
+          {data: 'tipo'},
+          {data: 'caracteristicas', orderable: false},
+          {data: 'ubicacion', orderable: false},
+          {data: 'centrodecosto'},
+          {data: 'cantidad', orderable: false},
+          {data: 'valor', orderable: false},
+          {data: 'iva', orderable: false},
+          {data: 'adcimejoras', orderable: false},
+          {data: 'aipi', orderable: false},
+          {data: 'depreciacion', orderable: false},
+          {data: 'aipidepreciacion', orderable: false},
+          {data: 'total', orderable: false},
+          {data: 'valorizacion', orderable: false},
+          {data: 'fechaad', orderable: false},
+          {data: 'proveedor', orderable: false},
+          {data: 'factura', orderable: false}
+        ],
+      });
+    });
+  </script>
+{% endblock %}
