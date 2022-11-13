@@ -11,7 +11,7 @@ server = 'localhost'
 database = '/restaurante'
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:s4iRCnDlpYz4UdnEoQgT@containers-us-west-91.railway.app:7139/railway'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:w8QtHlhtJBZBYzQBqBWK@containers-us-west-128.railway.app:6632/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)

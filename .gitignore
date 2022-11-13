@@ -4,3 +4,4 @@ ECHO est� activado.
 exel-parser
 __pycache__
 .vscode
+terraform/.terraform
