@@ -14,7 +14,7 @@ resource "azurerm_container_group" "appcg"{
 
   container {
     name = "app-contable"
-    image = "santithedev/app-contable:0.0.1"
+    image = "santithedev/app-contable"
     cpu = "1"
     memory = "1"
 
