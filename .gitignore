@@ -5,3 +5,4 @@ exel-parser
 __pycache__
 .vscode
 terraform/.terraform
+terraform/.terraform.lock.hcl
