@@ -20,6 +20,11 @@ provider "azurerm" {
     features {}
 }
 
+variable "imagebuild" {
+  type = string
+  description = "latest image builded"
+}
+
 resource "azurerm_resource_group" "DevOps_rg" {
   name = "DevOps-container"
   location = "eastus"
@@ -36,7 +41,7 @@ resource "azurerm_container_group" "appcg"{
 
   container {
     name = "app-contable"
-    image = "santithedev/app-contable"
+    image = "santithedev/app-contable:${var.imagebuild}"
     cpu = "1"
     memory = "1"
 
