@@ -36,7 +36,7 @@ resource "azurerm_container_group" "appcg"{
   resource_group_name = azurerm_resource_group.DevOps_rg.name
   
   ip_address_type = "public"
-  dns_name_label = "app-contable"
+  dns_name_label = "app-contable-prime"
   os_type = "Linux"
 
   container {
